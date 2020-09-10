@@ -41,6 +41,21 @@ class Collection implements ArrayAccess, Enumerable
     {
         return new static(range($from, $to));
     }
+    
+    /**
+     * Create a collection by exploding the given string.
+     *
+     * @param  string  $delimiter
+     * @param  string  $to
+     * @return static
+     */
+    public static function explode($delimiter, $string, $limit = PHP_INT_MAX) 
+    {
+        return new static(
+            explode(...func_get_args()
+        );
+    }
+    
 
     /**
      * Get all of the items in the collection.
